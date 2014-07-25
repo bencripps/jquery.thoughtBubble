@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta charset="utf-8">
+
+<title>jQuery thoughtBubble</title>
+
+<meta name="description" content="jquery thought bubble creator!">
+
+<meta name="author" content="benjamin cripps">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="../src/jquery.thoughtBubble.css">
+
+<style type="text/css">
+
+body {
+    background-color: #3399FF;
+    color: white;
+    font-family: 'avenir'
+}
+
+h1  {
+    font-family: 'avenir';
+    color: white;
+}
+
+#mainContainer {
+    margin: 0px auto;
+    text-align: center;
+}
+
+#mainContainer img {
+    margin-top: 200px;
+	border-radius: 50%;
+    width: 250px;
+    border: 3px solid black;
+}
+
+#codeContainer {
+    text-align: center;
+    width: 400px;
+    margin: 0px auto;
+    color: black;
+}
+
+pre {
+    text-align: left;
+    font-size: 19px;'
+}
+
+.container {
+    width: 80%;
+    margin: 0px auto;
+}
+#about h2 {
+
+}
+
+ul ul li {
+    list-style: none;
+}
+
+.inline-code {
+    display: inline-block;
+}
+
+</style>
+
+</head>
+
+<body>
+
+    
+
+	<div id='mainContainer' class='container'>
+
+        <h1>jQuery thoughtBubble!</h1>
+
+		<img src='http://benjamincripps.com/pages/img/about1.png' id="thoughtBubble" alt='whats up?' />
+
+        <div id='codeContainer'>
+
+        <pre>
+$('#thoughtBubble').thoughtBubble({
+    text: 'I could go for pizza!',
+    font: 'avenir'
+});
+        </pre>
+
+        </div>
+
+	</div>
+
+
+    <div id='about' class='container'>
+
+         <hr />
+        
+        <h2>FAQ</h2>
+        <ul>
+            <li>What's jQuery Thought Bubble?
+                <ul>
+                  <li>Thanks for asking. It's a small plugin for attaching a thought bubble to any element.</li>
+                </ul>
+            </li>
+
+            <li>What is customizable?
+                <ul>
+                <li>The text, color, and font can all be modified with plugin attributes.</li>
+                </ul>
+            </li>
+
+            <li>What about positioning?
+                <ul>
+                <li>That gets a bit tricky. Because the container ".bubble-container" is absoluteley positioned, you may need to adjust the width/height of the container to get the desired affect <strong>However</strong>, even though the container is absolutely positioned, it is responsive to window resizing.</li>
+                </ul>
+            </li>
+
+            <li>Licensing?
+                <ul>
+                <li>Yes, this plugin is covered by the MIT license.</li>
+                </ul>
+            </li>
+
+            <li>Contributions/Bugs/Fixes/Suggestions?
+                <ul>
+                <li>Fork away, message me on <a href="//github.com/bencripps">github</a>, <a href="//twitter.com/itsbencripps">twitter</a>, or send me an <a href="mailto:ben@benjamincripps.com">email</a></li>
+                </ul>
+            </li>
+
+
+
+        </ul>
+        
+
+
+    </div>
+
+</body>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<script type="text/javascript" src='../src/jquery.thoughtBubble.js'></script>
+
+<script type="text/javascript">
+
+    $(window).ready( function() {
+
+        $('#thoughtBubble').thoughtBubble({
+            text: 'I could go for pizza!',
+            font: 'avenir'
+
+        });
+
+    });
+
+</script>
+
+</html>
