@@ -9,12 +9,10 @@ $.fn.thoughtBubble = function( defaults ) {
         width: '330px',
         height: '210px',
         fontSize: '15px',
-        bubbleColor: 'white'
+        bubbleColor: 'white',
+        speed: 125
         
         }, defaults ),
-
-    animateTimeout,
-    previousWindowSize,
 
     getBubbleDiv = function( container ) {
 
@@ -44,23 +42,19 @@ $.fn.thoughtBubble = function( defaults ) {
         return '<div class="sm-bubble-holder"><div class="bubble bubbleLg"></div><div class="bubble bubbleMd"></div><div class="bubble bubbleSm"></div></div>';
     },
 
-    animate = function( bubble ){
-        clearTimeout( animateTimeout );
+    animate = function(){
 
         var bubbles = $(document).find('.bubble'),
             reversed = bubbles.get().reverse(),
-            timer = 0;
-
-        animateTimeout = setTimeout( function() {
-            $.each(reversed, function( index, element ) {
-
-                setTimeout( function() { $(element).stop().animate({ opacity: 1 }); }, timer );
-
-                timer += 100;
-
+            speed = settings.speed;
+        
+        $(reversed[0]).stop().animate({ opacity: 1}, speed, function() {
+            $(reversed[1]).animate({ opacity: 1}, speed, function() {
+                $(reversed[2]).animate({ opacity: 1}, speed, function() {
+                    $(reversed[3]).animate({ opacity: 1},speed);
+                });
             });
-
-        }, 100);
+        });
 
     },
 
@@ -89,7 +83,7 @@ $.fn.thoughtBubble = function( defaults ) {
 
         $this.on('mouseout', unanimate );
 
-        $(window).on('resize', function() { shiftDiv($this); });
+        $(window).on('resize', shiftDiv.bind(this, $this) );
 
         return $this.parent().prepend(container);
 

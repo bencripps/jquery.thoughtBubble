@@ -27,7 +27,7 @@ Download the source files. Include the JavaScript and CSS files (jQuery is requi
 Methods/Customization:
 ------------------
 
-Currently, only font-family, color, text, and bubble color is customizable through the plugin. Positioning can be modified by modifying the `.bubble-holder` class from within the plugin CSS.
+Currently, only font-family, color, text, bubble color, and animation speed are customizable through the plugin. Positioning can be modified by modifying the `.bubble-holder` class from within the plugin CSS.
 
 Suggestions/Bugs:
 -----------------
